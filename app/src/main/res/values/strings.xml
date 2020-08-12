@@ -5,7 +5,9 @@
     <string name="txt_note_body">TextView</string>
     <string name="note_body">Body</string>
     <string name="btn_save">SAVE</string>
-    <string name="note_add_error">Cant be blank</string>
+    <string name="note_add_error">Cannot be blank</string>
+    <string name="note_changed">note changed</string>
+    <string name="note_deleted">note deleted</string>
     <string name="note_added">Note added</string>
     <string name="note_fail">Note fail</string>
     <string name="txt_btn_update">UPDATE</string>
@@ -13,5 +15,5 @@
     <string name="note1">Note 1</string>
     <string name="note2">Note 2</string>
     <string name="note3">Note 3</string>
-    <string name="text_body">Type text here</string>
+    <string name="text_body">Make you first note</string>
 </resources>

@@ -15,6 +15,7 @@ class NoteViewModel(application: Application) : AndroidViewModel(application) {
     private val allNotesObservableSuccess = MutableLiveData<List<NoteEntity>>()
     private val allNotesObservableError = MutableLiveData<String>()
     private val addNoteObservable = MutableLiveData<Boolean>()
+    private val deleteNoteObservable = MutableLiveData<Boolean>()
 
     private val repository = RepositoryImpl(application)
 
@@ -41,11 +42,20 @@ class NoteViewModel(application: Application) : AndroidViewModel(application) {
             )
         )
     }
+    fun deleteNote(id: Int){
+        compositeDisposable.add(
+            repository.deleteEntity(id).subscribe(
+                { deleteNoteObservable.value = true },
+                { deleteNoteObservable.value = false }
+            )
+        )
+    }
 
     fun getNoteObservable(): LiveData<NoteEntity> = noteObservable
     fun getAllNotesObservableSuccess(): LiveData<List<NoteEntity>> = allNotesObservableSuccess
     fun getAllNotesObservableError(): LiveData<String> = allNotesObservableError
     fun getAddNoteObservable(): LiveData<Boolean> = addNoteObservable
+    fun getDeleteNoteObservable(): LiveData<Boolean> = deleteNoteObservable
 
     override fun onCleared() {
         compositeDisposable.clear()

@@ -11,4 +11,5 @@ interface Repository {
 
     fun addNoteEntity(entity: NoteEntity): Completable
 
+    fun deleteEntity(noteID: Int): Completable
 }

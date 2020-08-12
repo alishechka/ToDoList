@@ -28,4 +28,10 @@ class RepositoryImpl(context: Context) : Repository {
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
     }
+
+    override fun deleteEntity(noteID: Int): Completable {
+        return noteDao.deleteById(noteID)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+    }
 }

@@ -43,13 +43,20 @@ class EditNoteActivity : AppCompatActivity() {
                 viewModel.addNote(
                     NoteEntity(noteId, et_edit_head.text.toString(), et_edit_body.text.toString())
                 )
-                Toast.makeText(this, "note changed", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, getString(R.string.note_changed), Toast.LENGTH_LONG).show()
                 val intent = Intent(this, DisplayNoteActivity::class.java)
                 startActivity(intent)
             } else {
                 Toast.makeText(this, getString(R.string.note_add_error), Toast.LENGTH_SHORT)
                     .show()
             }
+        }
+        btn_delete.setOnClickListener {
+            viewModel.deleteNote(noteId)
+            Toast.makeText(this, getString(R.string.note_deleted), Toast.LENGTH_LONG).show()
+            val intent = Intent(this, DisplayNoteActivity::class.java)
+            startActivity(intent)
+
         }
     }
 }
