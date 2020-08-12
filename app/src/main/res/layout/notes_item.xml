@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:layout_margin="2dp"
+    android:padding="@dimen/padding8">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin8"
+        android:layout_marginTop="@dimen/margin8"
+        android:layout_marginEnd="@dimen/margin8"
+        android:layout_marginBottom="@dimen/margin8"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_add_note_head"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/note_head"
+            android:textSize="@dimen/text_size_22" />
+
+        <TextView
+            android:id="@+id/tv_note_add_body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dm_margin"
+            android:text="@string/txt_note_body"
+            android:textSize="@dimen/text_size_18" />
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
